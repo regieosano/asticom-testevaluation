@@ -26,11 +26,16 @@ const routeGetCustomer = router.get(
     '/customers/:id',
     customerController.getCustomer
 );
+const routeUpdateCustomer = router.put(
+    '/customers/:id',
+    customerController.updateCustomer
+);
 
 // Test Claudia Routes Locally
 server.use(BASE_URL, routeGetCustomers);
 server.use(BASE_URL, routePostCustomers);
 server.use(BASE_URL, routeGetCustomer);
+server.use(BASE_URL, routeUpdateCustomer);
 
 server.use((req, res) => {
     res
