@@ -1,5 +1,6 @@
 // Function Controllers
 
+// Dummy Database
 import customers from '../../db/db';
 
 const findCustomerBasedOnId = (id) => {
@@ -62,6 +63,26 @@ exports.updateCustomer = (req, res) => {
 
     try {
         res.status(200).send('Customer was updated.');
+    } catch (e) {
+        console.log(error);
+    }
+};
+
+exports.deleteCustomer = (req, res) => {
+    const customerId = req.params.id;
+
+    const customer = findCustomerBasedOnId(customerId);
+
+    if (!customer) {
+        return res.status(200).send('No such customer exist!');
+    }
+
+    const index = customers.findIndex((customer) => customer.id === customerId);
+
+    customers.splice(index, 1);
+
+    try {
+        res.status(200).send('Customer was deleted.');
     } catch (e) {
         console.log(error);
     }
