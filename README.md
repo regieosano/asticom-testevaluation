@@ -2,15 +2,15 @@
 
 # GET ALL CUSTOMERS
 
-# http://localhost:5555/api-test/claudia/customers
+(GET) http://localhost:5555/api-test/claudia/customers
 
 # GET SPECIFIC CUSTOMER (based on ID (c1, c2...))
 
-# http://localhost:5555/api-test/claudia/customers/{id}
+(GET) http://localhost:5555/api-test/claudia/customers/{id}
 
 # POST A CUSTOMER
 
-# http://localhost:5555/api-test/claudia/customers
+(POST) http://localhost:5555/api-test/claudia/customers
 
 # JSON Body - {
 
@@ -19,3 +19,19 @@
     "address": "Pasay QC"
 
 }
+
+# UPDATE A CUSTOMER (based on ID (c1, c2...))
+
+(PUT) http://localhost:5555/api-test/claudia/customers/{id}
+
+# JSON Body - {
+
+    "id": "c5",
+    "name": "Mike Sample",
+    "address": "Pasay QC"
+
+}
+
+# DELETE A CUSTOMER (based on ID (c1, c2...))
+
+(DELETE) http://localhost:5555/api-test/claudia/customers/{id}
