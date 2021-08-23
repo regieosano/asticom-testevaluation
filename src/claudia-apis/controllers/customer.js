@@ -19,3 +19,20 @@ exports.postCustomers = (req, res) => {
         console.log(error);
     }
 };
+
+exports.getCustomer = (req, res) => {
+    const customerId = req.params.id;
+    const customer = customers.find((customer) => {
+        return customer.id === customerId;
+    });
+
+    if (!customer) {
+        return res.status(200).send('No such customer exist!');
+    }
+
+    try {
+        res.status(200).send({ data: customer });
+    } catch (e) {
+        console.log(error);
+    }
+};

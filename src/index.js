@@ -6,6 +6,8 @@ const server = express();
 
 const router = express.Router();
 
+const BASE_URL = '/api-test/claudia';
+
 const PORT = 5555;
 
 // Body parser
@@ -20,10 +22,15 @@ const routePostCustomers = router.post(
     '/customers',
     customerController.postCustomers
 );
+const routeGetCustomer = router.get(
+    '/customers/:id',
+    customerController.getCustomer
+);
 
 // Test Claudia Routes Locally
-server.use('/api-test/claudia', routeGetCustomers);
-server.use('/api-test/claudia', routePostCustomers);
+server.use(BASE_URL, routeGetCustomers);
+server.use(BASE_URL, routePostCustomers);
+server.use(BASE_URL, routeGetCustomer);
 
 server.use((req, res) => {
     res
