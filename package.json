@@ -1,0 +1,20 @@
+{
+    "name": "asticrud",
+    "version": "1.0.0",
+    "description": "Test for CRUD using Claudia.js",
+    "main": "index.js",
+    "scripts": {
+        "devstart": "babel-node src/index.js"
+    },
+    "author": "Regie Osano",
+    "license": "MIT",
+    "dependencies": {
+        "-": "0.0.1",
+        "babel-cli": "^6.26.0",
+        "babel-preset-env": "^1.7.0",
+        "claudia": "^5.13.1",
+        "claudia-api-builder": "^4.1.2",
+        "express": "^4.17.1",
+        "g": "^2.0.1"
+    }
+}
