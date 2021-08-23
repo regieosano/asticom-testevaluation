@@ -1,4 +1,4 @@
-# APIs
+# APIs for Claudi.JS Deployment which can also be tested locally
 
 # GET ALL CUSTOMERS
 
